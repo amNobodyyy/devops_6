@@ -1,5 +1,5 @@
 const request = require('supertest')
-const app = require('../index')
+const {server, app} = require('../index')
 
 describe('GET /', () => {
     it('should return Order Service is running', async () => {
@@ -8,3 +8,7 @@ describe('GET /', () => {
         expect(res.text).toBe('Order Service is running')
     })
 })
+
+  afterAll(() => {
+    server.close();
+  })

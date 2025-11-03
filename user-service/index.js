@@ -5,8 +5,8 @@ app.get('/', (req, res) => {
     res.send('User Service is running');
 })
 
-app.listen(3002, () => {
+const server = app.listen(3002, () => {
     console.log('User Service is listening on port 3002');
 })
 
-module.exports = app;
+module.exports = {app, server};
